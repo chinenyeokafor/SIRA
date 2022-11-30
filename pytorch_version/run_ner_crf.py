@@ -416,7 +416,7 @@ def main():
     args.data_dir = os.path.join(args.data_dir, 'label')
 
     if not os.path.exists(args.output_dir):
-        os.mkdir(args.output_dir)
+        os.mkdirs(args.output_dir, exist_ok=True)
     time_ = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime())
     if os.path.exists(args.output_dir) and os.listdir(
             args.output_dir) and args.do_train and not args.overwrite_output_dir:
