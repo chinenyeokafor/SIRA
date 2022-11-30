@@ -409,6 +409,8 @@ def main():
     args = get_argparse().parse_args()
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
+    else:
+        print("Directory Exist")
     args.output_dir = args.output_dir + '{}'.format(args.model_type)
     args.output_dir = os.path.join(args.output_dir, 'label')
     args.data_dir = os.path.join(args.data_dir, 'label')
